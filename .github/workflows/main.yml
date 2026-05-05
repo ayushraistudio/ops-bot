@@ -75,9 +75,9 @@ jobs:
           # CONDITION 2: 10 PM Cleanup (IST) ya Manual 'cleanup'
           elif [ "$current_hour" -eq "16" ] || [ "$MANUAL_MODE" == "cleanup" ]; then
             
-            echo "🧹 10 PM Cleanup Mode ON. File reset ho rahi hai..."
+            echo " 10 PM Cleanup Mode ON. File reset ho rahi hai..."
             # Yeh command file ko overwrite karke blank/fresh bana deti hai
-            echo "✅ Daily Log Reset: $(date)" > activity_log.txt
+            echo " Daily Log Reset: $(date)" > activity_log.txt
             git add activity_log.txt
             git commit -m "chore(maint): cleaning up daily logs for fresh start 🧹"
 
@@ -86,10 +86,10 @@ jobs:
           # toh ye chalega hi chalega. Miss hone ka chance nahi.
           else
             
-            echo "🟢 Routine Check Mode (Fixed)"
+            echo " Routine Check Mode (Fixed)"
             echo "Routine verification: $(date)" >> activity_log.txt
             git add activity_log.txt
-            git commit -m "chore(bot): routine health check ✅"
+            git commit -m "chore(bot): routine health check "
           fi
           
       - name: 📤 Push Changes
